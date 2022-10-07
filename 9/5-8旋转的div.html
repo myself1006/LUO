@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box div {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(44, 119, 185);
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div class="box"></div>
+    <script>
+        //终极目标：每点击按钮，生成一个方向不同的5个v字形的div 
+        //step1:获取元素
+        var btn = document.querySelector('button')
+        var oDiv = document.querySelector('.box')
+        //step2：定义变量
+        var str = ''
+        var left, top1
+        var num = 0
+        //step3:第一次点击按钮，生成5个div
+        btn.onclick = function () {
+            //上
+            if (num == 0) {
+                for (var i = 0; i < 5; i = i + 1) {
+                    left = i * 50
+                    if (i < 3) {
+                        top1 = i * 50 + 50
+                    } else {
+                        top1 = (5 - i - 1) * 50 + 50
+                    }
+                    str = str + '<div style="left:' + left + 'px;top: ' + top1 + 'px;"></div>'
+                }
+                num = num + 1
+            //右
+            } else if(num == 1){
+                for (var i = 0; i < 5; i = i + 1) {
+                    top1 = i * 50 + 50
+                    if (i < 3) {
+                        left = (5-i-1) * 50 
+                    } else {
+                        left = i * 50 
+                    }
+                    str = str + '<div style="left:' + left + 'px;top: ' + top1 + 'px;"></div>'
+                }
+                num = num + 1
+            //下
+            }else if(num == 2){
+                for (var i = 0; i < 5; i = i + 1) {
+                    left = i * 50
+                    if (i < 3) {
+                        top1 = (5 - i - 1) * 50  + 50
+                    } else {
+                        top1 = i * 50  + 50
+                    }
+                    str = str + '<div style="left:' + left + 'px;top: ' + top1 + 'px;"></div>'
+                }
+                num = num + 1
+            //左
+            } else {
+                for (var i = 0; i < 5; i = i + 1) {
+                    top1 = i * 50 + 50
+                    if (i < 3) {
+                        left = i * 50 
+                    } else {
+                        left = (5 - i - 1) * 50 
+                    }
+                    str = str + '<div style="left:' + left + 'px;top: ' + top1 + 'px;"></div>'
+                }
+                num = 0
+            }
+            oDiv.innerHTML = str
+            str = ''
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

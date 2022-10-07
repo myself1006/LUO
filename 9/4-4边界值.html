@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="container">
+			<input type="button"  id="btn1" value="-" />
+			<input type="text" id="txt" value="0" />
+			<input type="button"  id="btn2" value="+" />
+		</div>
+		<script type="text/javascript">
+			//获取元素
+			var oBtn1 = document.getElementById('btn1')
+			var oTxt = document.getElementById('txt')
+			var oBtn2 = document.getElementById('btn2')
+			
+			//单击btn2时 input的value值 + 1 或 -1
+			oBtn2.onclick = function () {
+				//oTxt.value = oTxt.value + 1 // +连词符
+				//oTxt.value += 1  // +连词符
+				oTxt.value++  //自增1  5
+				if ( oTxt.value > 4) {
+					oTxt.value = 4
+				}
+			}
+			oBtn1.onclick = function () {
+				oTxt.value--  //自增1
+				if ( oTxt.value < 0) {
+					oTxt.value = 0
+				}
+			}
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

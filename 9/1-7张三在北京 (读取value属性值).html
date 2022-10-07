@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="text1" type="text" />
+<select id="select1">
+	<option value="南京">南京</option>
+	<option value="北极">北极</option>
+	<option value="黄土高坡">黄土高坡</option>
+</select>
+<input id="btn1" type="button" value="按钮" />
+<script>
+    window.onload = function (){
+	var oBtn = document.getElementById('btn1');
+	var oText = document.getElementById('text1');
+	var oSelect = document.getElementById('select1');
+
+	oBtn.onclick = function (){
+		alert(oText.value + ' 在 ' + oSelect.value);
+	};
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当前菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav {
+            width: 500px;
+            height: 40px;
+            line-height: 40px;
+            margin: 50px auto 0 auto;
+            display: flex;
+            /* justify-content: space-around; */
+            border: 1px solid #333;
+        }
+
+        nav a {
+            /* background-color: cornflowerblue; */
+            /* flex-grow: 设置弹性项目的扩展比例 */
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .a1 {
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#"  class="a1">首页</a>
+        <a href="#">新闻</a>
+        <a href="#">产品</a>
+        <a href="#">服务</a>
+        <a href="#">联系我们</a>
+    </nav>
+</body>
+<script>
+    //目标：点击a标签，修改当前点击的a标签设置背景色，2.清除上一个a标签的背景色
+    //1.获取元素
+    var aA = document.querySelectorAll("nav a")
+    //4.添加变量存储上一个
+    var last = aA[0]
+    //2.点击哪个a给那个添加点击事件
+    for(var i = 0 ; i < aA.length ; i ++)
+    aA[i].onclick = function(){
+        //5.清除上一个背景色
+        last.className =""
+        //3.添加背景色
+        this.className = "a1"
+        //6.为当期a标签添加背景色之后，那么当前a标签就成了下一次点击的a标签的上一个
+        last = this
+    }
+</script>
+
+</html>

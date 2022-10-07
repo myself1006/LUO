@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: skyblue;
+        }
+        .container{
+            width:300px;
+            height:150px;
+            margin:0 auto;
+            border:#ccc solid 1px;
+            background-color: #fff;
+            position: fixed;
+            left:50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            padding: 30px
+        }
+        input{
+            width:100%;
+            height:40px;
+            line-height: 40px;
+            font-size:24px;
+            outline:none;
+        }
+        input:focus{
+            box-shadow: 0 0 6px 2px rgba(255,0,0,.4);
+        }
+        button{
+            width:100%;
+            margin-top:30px;
+            height:40px;
+            line-height: 40px;
+            font-size:20px;
+            background-image: linear-gradient(rgb(109, 176, 221),rgb(0, 145, 255));
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input placeholder="请输入成绩" type="text" id="input1">
+        <button id="btn">查询</button>
+    </div>
+
+    <script>
+        //获取元素(召集对象)
+        var input = document.getElementById('input1')
+        var btn = document.getElementById('btn')
+        //定义变量
+        var score = ''
+        //需求：点击btn，读取input的value值；
+        //需求：把读取的value值存储到score中
+        //需求：弹窗出score
+        btn.onclick = function(){
+            score = input.value
+            //在读取分数之后
+            if( score >= 90 && score <=100 ){
+                window.alert('您的分数是：' + score + ' 分| 你太棒了！')
+            } else if(score >= 80 && score < 90){
+                window.alert('您的分数是：' + score + ' 分| 很好！')
+            } else if(score >= 70 && score < 80){
+                window.alert('您的分数是：' + score + ' 分| 一般！')
+            } else if(score >= 60 && score < 70){
+                window.alert('您的分数是：' + score + ' 分| 及格！')
+            } else if (score >= 0 && score < 60){
+                window.alert('您的分数是：' + score + ' 分| 你该努力了！')
+            } else {
+                window.alert('对不起，您输错了')
+            }
+            input.value = ''
+        }
+    </script>
+</body>
+</html>

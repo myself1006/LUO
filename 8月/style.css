@@ -1,0 +1,501 @@
+/* 重置浏览器默认样式 */
+*{
+	margin:0;
+	padding:0;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul{
+	list-style:none;
+}
+img{
+	display: block;
+}
+/* 基本布局 */
+body{
+	background-color: #f5f5f5;
+}
+header{
+	background-color: white;
+}
+main{
+	/* background-color:skyblue; */
+	height:1000px;
+}
+footer{
+	/* background-color: pink; */
+	height:300px;
+}
+/* header样式 */
+heaer .hang1{
+	width:100%;
+	background-color: #333;
+	color:#bbb;
+	font-size:12px;
+	/* border:1px solid blue; */
+}
+.center{
+	width:1226px;
+	/* background-color: red; */
+	margin: 0 auto;
+	/* overflow: hidden; */
+	/* border:3px solid red; */
+	position: relative;
+}
+/* header .hang1 .lan1{
+	float:left;
+	width:1000px;
+	height:40px;
+	line-height: 40px;
+}
+header .hang1 .lan2{
+	float:right;
+	width:226px;
+	text-align: right;
+	height:40px;
+	line-height: 40px;
+} */
+
+/* 行2 */
+
+header .hang2{
+	border:1px solid red;
+	
+}
+header .hang2 #logo{
+	width:56px;
+	height:56px;
+}
+header .hang2 .center{
+	overflow: hidden;
+	/* background-color: yellow; */
+}
+header .hang2 .lan1{
+	float:left;
+	width:226px;
+	height:56px;
+	padding:22px 0;
+	
+}
+header .hang2 .lan2{
+	float:left;
+	width:700px;
+	height:100px;
+	line-height: 100px;
+}
+header .hang2 .lan3{
+	float:left;
+	width:300px;
+	height:42px;
+	line-height: 42px;
+	overflow: hidden;
+	padding:29px 0;
+}
+header .hang2 .lan3 input{
+	width:200px;
+	height:40px;
+	font-size:16px;
+	padding-left:10px;
+	border:1px solid #ccc;
+	float:left;
+}
+header .hang2 .lan3 span{
+	float:left;
+	width:50px;
+	height:22px;
+	padding:9px 0;
+	/* text-align: center; */
+	border:1px solid #ccc;
+	border-left:none;
+	/* background-color: red; */
+}
+header .hang2 .lan3 span img{
+	width:24px;
+	height:24px;
+	margin: 0 auto;
+}
+
+
+header .hang3{
+	/* border:10px solid blue; */
+	/* height:460px; */
+}
+header .hang3 .menu{
+	background-color: rgba(0,0,0,.4);
+	width:234px;
+	height:460px;
+	position: absolute;
+	left:0;
+	top:0;
+}
+header .hang3 .menu a{
+	color:#fff;
+}
+
+header .hang4{
+	height:170px;
+}
+header .hang4 .center div{
+	float:left;
+	width:316px;
+	margin-right:14.5px;
+}
+header .hang4 .center .lan1{
+	width:234px;
+	background-color: antiquewhite;
+	height:170px;
+}
+header .hang4 img{
+	width:316px;
+	height:170px;
+}
+
+header .hang4 .center .lan4{
+	margin-right:0;
+}
+
+header .hang4{
+	border:1px solid gold;
+}
+
+/* 轮播图 */
+.slider{
+				width:1226px;
+				margin:0 auto;
+				background-color: red;
+				border:5px solid black;
+				overflow: hidden;
+			}
+			.container{
+				background-color: gold;
+				height:460px;
+				width:6130px;
+				animation-name: slider;
+				animation-duration: 10s;
+				animation-iteration-count: infinite;
+			}
+			.container img{
+				width:1226px;
+				/* display: block; */
+				float:left;
+			}
+			@keyframes slider{
+				0%{
+					transform: translate(0,0);
+				}
+				12.5%{
+					transform: translate(0,0);
+				}
+				25%{
+					transform: translate(-1226px,0);
+				}
+				37.5%{
+					transform: translate(-1226px,0);
+				}
+				50%{
+					transform: translate(-2452px,0);
+				}
+				62.5%{
+					transform: translate(-2452px,0);
+				}
+				75%{
+					transform: translate(-3678px,0);
+				}
+				87.5%{
+					transform: translate(-3678px,0);
+				}
+				100%{
+					transform: translate(-4904px,0);
+				}
+			}
+
+
+
+/* 
+ 浮动是为了并排元素。条件：
+ 1. 确定浮动元素和浮动元素的父元素
+ 2. 为要浮动的元素分别添加float属性
+ 3. 为要浮动的元素分别添加width属性，且宽度之和不能大于父元素
+ 
+ 
+ 
+ */
+
+
+
+
+/* main 部分 */
+
+main .block .hang2 .lan1{
+	float:left;
+	width:234px;
+}
+main .block .hang2 .lan2{
+	float:left;
+	width:992px;
+}
+main .block .hang2 .lan2 ul{
+	overflow: hidden;
+}
+main .block .hang2 .lan2 ul li{
+	float:left;
+	width:232px;
+	height:300px;
+	background-color: white;
+	margin-bottom: 14px;
+	margin-left:14px;
+	text-align: center;
+	
+}
+main .block .hang2 .lan2 ul li:hover{
+
+}
+main .block .hang2 .lan2 ul li img{
+	margin: 0 auto;
+}
+main .block .hang2 .lan2 ul li span{
+	display: block;
+}
+/* 登录框 */
+.login{
+	width:800px;
+	height:500px;
+	border:5px solid red;
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%); 
+	background-color: #fff;
+	/* margin-right:-250px; */
+	/* z-index:999999; */
+}
+.login-body .hang2{
+	height:300px;
+	overflow:auto;
+}
+
+.login-footer a{
+	display: block;
+	width:200px;
+	height:40px;
+	line-height: 40px;
+	background-color: red;
+	float:left;
+	margin-right:20px;
+	text-align: center;
+}
+#last{
+	margin-right:0;
+}
+.box{
+	width:420px;
+	overflow: hidden;
+	margin:0 auto;
+}
+
+/* 右侧快捷导航 */
+/* 1.召集对象 */
+.kjdh{
+	width:84px;
+	height:561px;
+	position: fixed;
+	/* right:300px; */
+	right:50%;
+	bottom:100px;
+	margin-right:-737px;
+	background-color: gold;
+	text-align: center;
+}
+.kjdh ul{
+	
+}
+.kjdh ul li{
+	background-color: #fff;
+	height:84px;
+	/* margin-bottom:1px; */
+	border:1px solid red;
+	border-bottom:none;
+}
+
+.kjdh ul li:nth-child(5){
+	border-bottom:1px solid red;
+}
+
+.kjdh ul li:last-child{
+	margin-top:15px; 
+	border-bottom:1px solid red;
+}
+
+
+
+.kjdh ul a{
+	text-decoration: none;
+}
+.kjdh a i{
+	
+}
+.kjdh a span{
+	display: block;
+}
+
+
+/* 智能穿戴开始 */
+.zncd .hang1{
+				overflow: hidden;
+			}
+			.zncd .hang2{
+				height:614px;
+			}
+			/* 行1:先召集对象 */
+			.zncd .hang1 .lan1{
+				float:left;
+				width:50%;
+			}
+			.zncd .hang1 .lan1 h3{
+				font-weight:normal;
+			}
+			.zncd .hang1 .lan2{
+				/* background-color: yellow; */
+				float:left;
+				width:50%;
+				text-align: right;
+				/* letter-spacing: 2em; */
+				word-spacing: 1.5em;
+			}
+			
+			/*行2：先召集对象 > 添加背景色 > 浮动 */
+			.zncd .hang2 .lan1{
+				/* background-color: red; */
+				float:left;
+				width:234px;
+				height:614px;
+			}
+			.zncd .hang2 .lan2{
+				/* background-color: aqua; */
+				float:left;
+				width:992px;
+				text-align: center;
+			}
+			
+			/* 进入hang2>lan2 ：召集对象 */
+			.zncd .hang2 .lan2 ul{
+				/* background-color: pink; */
+			}
+			.zncd .hang2 .lan2 ul li{
+				background-color: #fff;
+				width:234px;
+				height:300px;
+				float:left;
+				margin-left:14px;
+				margin-bottom:14px;
+			}
+			.zncd .hang2 .lan2 ul li img{
+				margin:0 auto;
+			}
+			.zncd .hang2 .lan2 ul li p:nth-child(3){  /* 选择第几个子元素 */
+				/* background-color: gold; */
+				font-size:14px;
+				height:24px;
+				line-height: 24px;
+				overflow: hidden;
+				color:#999;
+			}
+			.zncd .hang2 .lan2 ul li p:nth-child(4){  /* 选择第几个子元素 */
+				height:20px;
+				line-height: 20px;
+				overflow: hidden;
+				padding:15px 0 0 0;
+				word-spacing: .5em;
+			}
+			.zncd .hang2 .lan2 ul li p:nth-child(4) span:nth-child(1){
+				color:orange;
+			}
+			.zncd .hang2 .lan2 ul li p:nth-child(4) span:nth-child(2){
+				color:#999;
+				text-decoration: line-through;
+			}
+			.zncd .hang2 .lan2 ul li,.up,.down{
+				transition: .3s;
+			}
+			.zncd .hang2 .lan2 ul li:not(.hang2 .lan2 ul li:last-child):hover,.up:hover,.down:hover{
+				box-shadow: 0 4px 20px 5px rgba(0,0,0,.1);
+				transform: translateY(-2px);
+			}
+			
+			/* 标题栏:1.召集对象 */
+			.zncd .hang1{
+				height:58px;
+			}
+			.zncd .hang1 .lan1{
+				height:58px;
+				line-height: 58px;
+				font-size:22px;
+			}
+			.zncd .hang1 .lan2{
+				height:58px;
+				line-height:58px;
+				/* padding-bottom:16px; */
+				font-size:16px;
+			}
+			
+			/* 最后一张卡片 */
+			.zncd .hang2 .lan2 ul li:last-child{
+				background-color: rgba(255,255,255,0);
+				font-size:14px;
+			}
+			.zncd .hang2 .lan2 ul li:last-child .up{
+				/* background-color: gold; */
+				overflow:hidden;
+				height:143px;
+				background-color: #fff;
+			}
+			.zncd .hang2 .lan2 ul li:last-child .down{
+				overflow:hidden;
+				height:143px;
+				margin-top:14px;
+				background-color: #fff;
+			}
+			.zncd .hang2 .lan2 ul li:last-child .up .left{
+				float:left;
+				width:38%;
+				height:60px;
+				/* background-color: gold; */
+				padding:41px 6% 42px 6%;
+				
+			}
+			.zncd .hang2 .lan2 ul li:last-child .up .right{
+				float:left;
+				width:50%;
+				height:80px;
+				/* background-color: pink; */
+				padding:31px 0 32px 0;
+			}
+			.zncd .hang2 .lan2 ul li:last-child .up .right img{
+				width:80px;
+				height:80px;
+			}
+			.zncd .hang2 .lan2 ul li:last-child .down .left{
+				float:left;
+				width:50%;
+				height:40px;
+				/* background-color: pink; */
+				padding:51px 0 52px 0;
+			}
+			.zncd .hang2 .lan2 ul li:last-child .down .right{
+				float:left;
+				width:50%;
+				height:40px;
+				/* background-color: gold; */
+				padding:51px 0 52px 0;
+			}
+			.zncd .hang2 .lan2 ul li:last-child .down{
+				/* background-color: pink; */
+				
+			}
+			.zncd .hang2 .lan2 ul li:last-child .down img{
+				width:48px;
+				height:48px;
+				
+			}
+	/* 智能穿戴结束 */

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box{
+            width: 550px;
+            height: 310px;
+            border: 2px solid black;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        .box #shang{
+            display: block;
+           
+            position: absolute;
+            left: 20px;
+            bottom: 150px;
+            margin-top: 14.5px;
+            /* background-color: brown;  */
+        }
+        .box #xia{
+            display: block;
+            /* height: 60px; */
+            position: absolute;
+            right: 20px;
+            bottom:150px;
+            margin-top: 14.5px;
+            /* background-color: aquamarine; */
+        }
+        .box2{
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="img\img01.jpg" id="da"/>
+        <img src="img\prev.png" id="shang"/>
+        <img src="img\next.png" id="xia"/>
+        <div class="box2">
+            <h3>江苏9月1日</h3>
+            <p>起离婚登记省内通办 16狂犬病有哪些临床表现</p>
+        </div>
+    </div>
+    
+    <script>
+        //  var da = document.getElementById("da")
+        // 获取元素
+        var img1 = document.getElementById("shang"),
+            img2 = document.getElementById("xia"),
+            img3 = document.getElementById('da')
+            oBox = document.querySelector(".box")
+        var arr = ["img/img01.jpg",
+                   "img/img02.jpg",
+                   "img/img03.jpg",
+                   "img/img04.jpg"
+    ]
+    var arr1 =[
+            "<h3>江苏9月1日</h3><p>起离婚登记省内通办 16狂犬病有哪些临床表现</p>",
+            "<h3>王毅会见美国国务卿布林肯</h3><p>王毅在中国常驻联合国代表团驻地见布林肯。</p>",
+            "<h3>Z274次列车多人感染</h3> <p>涉3省多地热15男孩给消防员送奶茶被卡住</p>",
+            "<h3>调查组已赴山艺开展调查</h3> <p>中学食堂后厨爬满苍蝇 教育局回应</p>"
+    ]
+  var   num = 0
+       img1.onclick=function(){
+         num = num - 1
+            if(num == -1){
+            num = 3
+         }
+            img3.src = arr[num];
+           
+           }
+        img2.onclick=function(){
+            num = num + 1
+         if(num == 3){
+            num = 0
+         }
+            img3.src = arr [num];
+        }
+    </script>
+</body>
+</html>

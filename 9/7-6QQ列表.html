@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3642204_u5n8zvfrz5d.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            line-height: 1.5;
+            font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+        }
+        ul{
+            list-style: none;
+        }
+        #qq {
+            width: 432px;
+            height: 882px;
+            margin: 20px auto;
+            background-color: rgb(236, 179, 179);
+            border: 1px solid #008AC6;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        header {
+            height: 210px;
+            background-image: linear-gradient(to right, #79a2edb4, #3d73d1);
+        }
+
+        header .container {
+            padding: 10px;
+        }
+
+        .topbar {
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: #fff;
+
+        }
+
+        .topbar i {
+            font-size: 24px;
+        }
+
+        .topbar .icon-message_1 {
+            font-size: 20px;
+            line-height: 1.4;
+        }
+
+        .logo {
+            /* background-color: red; */
+            flex-grow: 1.5;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .logo .icon-QQ {}
+
+        .shortcuts {
+            /* background-color: blue; */
+            flex-grow: 4;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btns {
+            /* background-color: red; */
+            flex-grow: 1.5;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .info {
+            height: 120px;
+            display: flex;
+            /* background-color: red; */
+            align-items: center;
+        }
+
+        .info img {
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .search {
+            height: 46px;
+        }
+/* view */
+        .view {
+            height: 600px;
+            position:relative;
+        }
+        .tabs{
+            display: flex;
+            border-bottom:1px solid #eee;
+        }
+        .tabs span{
+            background-color:#fff;
+            flex:1;
+            text-align: center;
+            font-size:20px;
+            padding:10px 0;
+        }
+        .tabs span.active{
+            color:#b2890c;
+            border-bottom:2px solid #1FD1FE;
+        }
+        .content{
+            position:absolute;
+            width:100%;
+            height:100%;
+            transition: .5s;
+        }
+        .content1{
+            left:0;
+            top:53px;
+            background-color: #ccc;
+        }
+        .content1 ul{
+            /* display: flex;
+            flex-direction: column; */
+        }
+        .content1 ul li{
+            height:90px;
+            line-height: 90px;
+            box-sizing: border-box;
+            border-bottom:1px solid #eee;
+            position:relative;
+            left:80px;
+            width:352px;
+            /* background-color: red; */
+        }
+        .content1 ul li::before{
+            content:'帅';
+            font-size:40px;
+            color:azure;
+            text-align: center;
+            display: block;
+            width:60px;
+            height:60px;
+            line-height: 60px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            left:-65px;
+            top:50%;
+            transform: translateY(-30px);
+        }
+        .content1 ul li:nth-child(1){
+            
+        }
+        .content2{
+            /* display: none; */
+            
+            left:432px;
+            top:50px;
+            background-color: gold;
+        }
+        #list h2, .lis li {
+			font-size: 18px;
+			padding: 5px;
+		}
+		.lis li {
+			border-bottom: 1px solid black;
+			text-indent: 15px;
+			cursor: pointer;
+		}
+		.lis ul {
+			display: none;
+		}
+		#list h2 {
+			background: url(3-img/ico1.gif) no-repeat 5px center;
+			text-indent: 15px;
+			background-color: #38e9ff;
+			cursor: pointer
+		}
+		#list h2.active {
+			background: url(3-img/ico2.gif) no-repeat 5px center #8ab0d6;
+		}
+		#list .selected {
+			background: #eee;
+		}
+        .content3{
+            /* display: none; */
+            left:432px;
+            top:50px;
+            background-color: pink;
+        }
+        .content3 ul li::before{
+            background-color: blue;
+        }
+        /* footer */
+        footer {
+            height: 70px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="qq">
+        <header>
+            <div class="container">
+                <div class="topbar">
+                    <div class="logo">
+                        <i class="iconfont icon-QQ"></i>
+                    </div>
+                    <div class="shortcuts">
+                        <i class="iconfont icon-email-fill"></i>
+                        <i class="iconfont icon-qzone"></i>
+                        <i class="iconfont icon-fuzhuang-Txu"></i>
+                        <i class="iconfont icon-message_1"></i>
+                        <i class="iconfont icon-gengduo-shuxiang"></i>
+                    </div>
+                    <div class="btns">
+                        <i class="iconfont icon-zuixiaohua"></i>
+                        <i class="iconfont icon-guanbi"></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="avatar">
+                        <img src="./img/head3_100x100@2x.png" alt="">
+                    </div>
+                    <div class="personal-info">
+                        <p>
+                            <strong>村长</strong><span>LV4S</span><span>VIP</span>
+                        </p>
+                        <p>走别人的路，让别人无路可走。</p>
+                    </div>
+                </div>
+                <div class="search">
+                    <input type="search" placeholder="搜索">
+                </div>
+            </div>
+        </header>
+        <section class="view">
+            <div class="tabs">
+                <span class="active">消息</span>
+                <span>联系人</span>
+                <span>空间</span>
+            </div>
+            <div class="content content1">
+                <ul>
+                    <li>花城</li>
+                    <li>陆青云</li>
+                    <li>我的Andriod手机</li>
+                    <li>群助手</li>
+                    <li>雨花互联网安全管理三</li>
+                    <li>好友动态</li>
+                </ul>
+            </div>
+            <div class="content content2">
+                <ul id="list">
+                    <li class="lis">
+                        <h2>我的好友</h2>
+                        <ul>
+                            <li>谢怜</li>
+                            <li>戚容</li>
+                            <li>薛洋</li>
+                            <li>江厌离</li>
+                        </ul>
+                    </li>
+                    <li class="lis">
+                        <h2>企业好友</h2>
+                        <ul>
+                            <li>容嬷嬷</li>
+                            <li>长沙臭豆腐</li>
+                            <li>周絮</li>
+                            <li>唐伯虎</li>
+                            <li>李大朗</li>
+                        </ul>
+                    </li>
+                    <li class="lis">
+                        <h2>黑名单</h2>
+                        <ul>
+                            <li>吴亦凡</li>
+                            <li>李易峰</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="content content3">
+                <ul>
+                    <li>花城</li>
+                    <li>陆青云</li>
+                    <li>我的Andriod手机</li>
+                    <li>群助手</li>
+                    <li>雨花互联网安全管理三</li>
+                    <li>好友动态</li>
+                </ul>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </div>
+    <script>
+        //点击标签，切换内容
+//1.获取元素
+var aTab = document.querySelectorAll('.tabs span')
+var aContent = document.querySelectorAll('.content')
+var last = 0
+//2.添加点击事件
+for(var i=0;i<aTab.length;i= i +1){
+    aTab[i].index = i
+    aTab[i].onclick = function(){
+        for(var i=0;i<aTab.length;i+=1){
+            aTab[i].className = ''
+        }
+        this.className = 'active'
+        // aContent[last].style.transform = `translateX(${-432*this.index}px)`
+        // aContent[this.index].style.transform = `translateX(${-432}px)`
+        if(this.index > last){
+            aContent[last].style.left = `-432px`
+            aContent[this.index].style.left = `0px`
+        } else {
+            aContent[this.index].style.left = `0px`
+            aContent[last].style.left = `432px`
+        }
+        console.log(last,this.index)
+        last = this.index
+        
+    }
+}
+contact()
+function contact(){
+    var oUl = document.querySelector('#list'),
+                aH2 = document.querySelectorAll('#list h2'),
+                aUl = document.querySelectorAll('#list ul'),
+                aLi,
+                arrLi = [],
+                prevLiIndex = 0
+                flag = 1;
+
+            for(var i=0; i<aH2.length; i++) {
+                console.log(aH2)
+                aH2[i].index = i;
+                aH2[i].onclick = function(){
+                    console.log(111)
+                    for (var i=0; i<aH2.length; i++) {
+                        aUl[i].style.display = 'none';
+                        aH2[i].className = '';
+                    }
+                    aUl[this.index].style.display = 'block';
+                    aH2[this.index].className = 'active';
+                }
+            }
+
+            for(var i=0; i<aUl.length; i++) {
+                aLi = aUl[i].getElementsByTagName('li');
+                for(var j=0; j<aLi.length; j++) {
+                    arrLi.push(aLi[j]);
+                }
+            }
+
+            for(i=0; i<arrLi.length; i++) {
+                arrLi[i].index = i;
+                arrLi[i].onclick = function(){
+                    if(arrLi[prevLiIndex]!=this){
+                        arrLi[prevLiIndex].className = '';
+                    }
+                    if(arrLi[this.index].className) {
+                        arrLi[this.index].className = '';
+                    } else {
+                        arrLi[this.index].className = 'selected';
+                    }
+                    prevLiIndex = this.index;
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

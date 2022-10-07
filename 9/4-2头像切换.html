@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    img{
+        display: block;
+        border-radius: 50%;
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+    <img src="./img/667eb408a07d21b613f404b39d0dec8.jpg" id="tu"/>
+    <!-- <img src="667eb408a07d21b613f404b39d0dec8.jpg"/> -->
+    <script>
+        // 获取元素
+        var oImg = document.getElementById("tu")
+    //    第一次点击图片意味着修改图片src的属性
+        var on = true
+        // 单机btn1，1隐藏box 把box的display=nene 2btn1改成显示
+           oImg.onclick=function(){
+            if(on){
+               oImg.src = "./img/667eb408a07d21b613f404b39d0dec8.jpg"
+               on = false
+            }else{
+                oImg.src = "./img/e64e1bc84d425526eaccc1012b089b4.jpg"
+            on = true
+            }
+
+           }
+    </script>
+</body>
+</html>

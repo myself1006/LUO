@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box div{
+            width: 100px;
+            height: 100px;
+           /* border: 1px solid white; */
+            position: absolute;
+            left: 0;
+            top: 0; 
+        }
+        .box{
+            width: 1000px;
+            height: 1000px;
+            background-image: url("./img/lx.jpg");
+            background-repeat: no-repeat;
+            background-size: 1020px 1020px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button>按钮</button> -->
+    <div class="box"></div>
+    <script>
+        // 点击按钮把一个10*10的网格写入box里
+        // 1.获取元素
+        var btn =document.querySelector("button")
+        var oDiv =document.querySelector(".box")
+        
+        // 2.定义变量
+        var str = ""
+        // 3.添加事件函数
+        // btn.onclick = function(){
+          //4.批量拼接字符串
+          for(var i = 0; i < 10 ; i = i + 1){
+                
+            for(var j = 0 ; j<10; j = j + 1){
+                str = str + "<div style='left:"+j*100 +"px;top:"+i*100+"px;background:yellow; border: 1px solid white;'></div>"
+            }
+          }
+          //写入div
+          oDiv.innerHTML = str
+        // }
+        var aDiv = document.querySelectorAll(".box div")
+        
+        // 鼠标悬停在aDiv上aDiv颜色便透明。
+        for (var i = 0; i<100 ; i = i +1){
+            aDiv[i].onmouseover = function(){
+                this.style.background = ""
+                this.style.border = ""
+            }
+        }
+    </script>
+</body>
+</html>

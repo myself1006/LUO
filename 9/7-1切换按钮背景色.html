@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+        }
+
+        label {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .btn {
+            border-radius: 50%;
+            display: block;
+            width: 100px;
+            height: 100px;
+            outline: none;
+            border: none;
+            margin-left: 10px;
+        }
+
+        .bg {
+            background-color: rgb(97, 189, 222);
+            border-radius: 50%;
+            display: block;
+            width: 100px;
+            height: 100px;
+            outline: none;
+            border: none;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="button" value="按钮" id="" class="btn" index="0">
+        <input type="button" value="按钮" id="" class="btn" index="1">
+        <input type="button" value="按钮" id="" class="btn" index="3">
+    </form>
+    <script>
+        //终极目标：点击任意一个input——>切换input的class，并清除上一个的class
+    //1.获取元素
+    var aInput = document.querySelectorAll(".btn")
+   
+    //2.批量添加点击onclick事件
+    for(var i = 0 ; i <aInput.length; i = i + 1){
+         //4.创建变量（该变量负责记录bg类的变化）
+    //  aInput[0].add = false
+    //  aInput[1].add = false
+    //  aInput[2].add = false
+     aInput[i].add = false
+        aInput[i].onclick = function(){
+            //3.创建分支任务：一个分支添加.bg，还有一个任务是清除.bg
+            if(!this.add){//5.设置条件
+                //8.在点击按钮后，为当前按钮添加bg类。记得用for循环清除所有的input的bg类
+                for(var i = 0 ; i < aInput.length;i = i + 1){
+                    aInput[i].className = "btn"
+                    aInput[i].add = false
+                }
+                this.className = "btn bg"
+                //7.清除点bg类之后。记得修改按钮的add的值
+                this.add = true
+            }else{
+                this.className = "btn"
+                this.add = false
+            }
+        }
+    }
+
+
+
+
+        //方法一：可以通过点击修改按钮的行间样式（点击按钮给它添加一个bg的类）
+        //方法二：点击按钮修改按钮的class
+        //1.获取元素
+        // var aInput = document.querySelectorAll(".btn")//返回一个数组
+        
+        // console.log(aInput)
+        // //2.为三个按钮批量添加点击事件
+        // for (var i = 0; i < aInput.length; i = i + 1) {
+        //     //5.创建条件变量
+        //     aInput[i].add = false//add默认没有添加bg类
+        //     //7.创建索引变量index
+        //     aInput[i].index = i
+        //     //8.创建变量存储上一个的索引值
+        //     var last = 0
+        //     aInput[i].onclick = function () {
+        //     //9.区分点击的是哪个按钮
+        //     if (this.index == last){
+        //        console.log("点击新按钮了")
+        //     }else{
+        //         console.log("点击同一个")
+        //     }
+        //     last = this.index
+        // //    console.log(last)
+        //         //6.利用add这个条件变量创建分支：如果新增功能：再次点击当前input，清除bg类
+        //         if(!this.add){
+        //             this.className = 'btn bg'
+        //             this.add = true
+        //         }else{
+        //             this.className = 'btn'
+        //             this.add = false
+        //         }
+        //         // //3.先清除所有aInput的class属性中bg的类
+        //         for(var i = 0 ; i < aInput.length; i = i + 1){
+        //             aInput[i].className = "btn"
+        //         }
+        //         // //4.点击当前按钮，为它添加上bg的类。
+        //         this.className = "bg"      
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

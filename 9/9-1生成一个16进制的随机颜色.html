@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 如何生成一个随机十六禁制的颜色 -->
+    <button>点我！</button>
+    <script>
+        var oBtn =  document.querySelector("button")
+        //思路
+        //1.16进制的语法格式：#RRGGBB
+        //2.16进制：0-f
+        //3.Math.random()随机数0-16
+
+        const hex = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"]
+        oBtn.onclick  = function(){
+            let color = "#"
+
+        //从hex数组中随机抽取6个数组元素
+        
+        for(let i = 0 ; i < 6 ; i++ ){
+            color += hex[getNum()]
+        }
+        console.log(color)
+        function getNum(){
+            // Math.random()//0-1
+         return   Math.floor(Math.random()*hex.length)
+        }
+        document.body.style.background = color
+        oBtn.innerHTML = color
+        }
+      
+        </script>
+</body>
+</html>

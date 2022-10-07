@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				background-color: gold;
+				margin:10px 0;
+				height:50px;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>列表项1</li>
+			<li>列表项2</li>
+			<li>列表项3</li>
+		</ul>
+		
+		<script type="text/javascript">
+			var oUl = document.querySelector('ul')
+			var aLi = oUl.querySelectorAll('li')
+			for(var i=0;i<aLi.length;i++ ){
+				aLi[i].onclick = function(){alert(i)}
+				// aLi[0].onclick = function(){alert(0)}
+				// aLi[1].onclick = function(){alert(1)}
+				// aLi[2].onclick = function(){alert(2)}
+			}
+		</script>
+		
+		
+	</body>
+</html>
+<!-- 
+ 7. 用法5：批量添加事件
+ 8. document.querySelectorAll()  通过选择器获取元素  特点：全部、一组
+    document.querySelector() 通过选择器获取元素  特点：一个
+	
+	element.querySelectorAll()  通过选择器获取元素  特点：全部、一组
+	element.querySelector() 通过选择器获取元素  特点：一个
+	   
+	   
+	document.getElementById()  特点： 只有document对象有此方法
+    element.getElementById()  //错误的
+	
+9. nodelist 是一个类数组对象 
+	- nodelist跟数组非常相似
+	- nodelist是一个数值的列表
+	- nodlist中的每一个值都有下标  从0开始 和长度
+ 
+10. 变量
+ -->

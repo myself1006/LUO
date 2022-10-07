@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击按钮生成5条新闻</title>
+</head>
+
+<body>
+    <button id="btn">生成5条新闻</button>
+    <ul id="news"></ul>
+    <script>
+        var arr = [
+            '俄罗斯“断气”令欧洲各行业叫苦不迭，德媒预警将会',
+            '[法甲]布雷斯特1-1斯特拉斯堡',
+            '[男篮欧洲杯]法国78-74匈牙利',
+            '[法甲]克莱蒙2-0图卢兹',
+            '[法甲]蒙彼利埃1-3里尔',
+        ]
+        //核心目标：点击按钮生成5条新闻
+
+        //第一步：获取元素
+        var btn = document.getElementById('btn')
+        var oUl = document.getElementById('news')
+
+        //第二步：添加点击事件并设置“事件处理函数”
+        btn.onclick = function(){
+            //第三步：生成5条新闻
+            
+            //第四步：- 读取数组新闻
+            for(var i=0;i < 5;i = i + 1){
+                console.log(arr[i])
+                //第五步 - 把读取的新闻写入oUl
+                oUl.innerHTML = oUl.innerHTML + '<li>'+ arr[i] + '</li>'
+            }
+            // console.log(arr[0])
+            // console.log(arr[1])
+            // console.log(arr[2])
+            // console.log(arr[3])
+            // console.log(arr[4])
+                
+
+
+        }
+    </script>
+</body>
+
+</html>

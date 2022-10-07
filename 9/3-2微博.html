@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 800px;
+            margin: 0 auto ;
+        }
+        .nei{
+            width: 300px;
+            height: 200px;
+            margin: 50px auto 0;
+            /* border: 1px solid black; */
+            box-shadow: 2px 2px 1px black; 
+            background-color: bisque;
+        }
+#text{
+    display: block;
+    margin: 0 auto;
+    height: 80px;
+}
+#input{
+    margin-left: 200px;
+    display: block;
+}
+#kuang{
+   
+    width: 300px;
+    height: 180px;
+    margin: 50px auto 0;
+    
+}
+p{
+    background-color: moccasin;
+    margin: 50px 0;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="nei">
+        <textarea rows="" cols="" id="text"></textarea>
+        <input type="submit" id="input"/>
+    </div>
+        <div>
+            <div id="kuang"></div>
+        </div>
+    </div>
+    <script>
+        // 获取元素
+        var text = document.getElementById("text")
+        var input = document.getElementById("input")
+        var kuang = document.getElementById("kuang")
+        // 文本框（text）里输入文字，点击input，将文字传输到kuang
+        input.onclick = function(){
+            kuang.innerHTML =  text.value + '<p>' + kuang.innerHTML + '</p>'
+        }
+           </script>
+</body>
+</html>

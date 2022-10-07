@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 400px;
+            height: 320px;
+            border: 2px solid #ccc;
+            margin: 100px auto;
+        }
+        .box2{
+            height: 250px;
+            background-color: coral;
+        }
+        .box2 p{
+            color: crimson;
+            height: 250px;
+            font-size: 150px;
+         text-align: center;
+         line-height: 250px;
+        }
+        button{
+            border: none;
+            background-color: crimson;
+            border-radius: 20px;
+            width: 80px;
+            height: 40px;
+            margin-top: 10px;
+        }
+        .box3{
+            background-color: coral;
+            height: 70px;
+            border-top: 2px solid #ccc;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+   <div class="box1">
+    <div class="box2">
+       <p>
+        <!-- 0 -->
+       </p>
+    </div>
+    <div class="box3">
+        <button class="btn1">减一</button><button class="btn2">归零</button><button class="btn3">加一</button>
+    </div>
+   </div>
+   <script>
+    //终极目标：点击btn1，p标签里的0减一，点击btn2，p标签里的数字归0，点击btn3，p标签里的数字加1.
+    //1.获取元素
+    var oBtn1 = document.querySelector(".btn1")
+    var oBtn2 = document.querySelector(".btn2")
+    var oBtn3 = document.querySelector(".btn3")
+    var op = document.querySelector("p")
+    //2.将p存为变量
+    var num = 0
+    //3.在p标签中输入num这个变量
+    op.innerHTML = num
+    //4.点击-数字加一颜色btn1便成green
+    oBtn1.onmousedown = function(){
+        num -= 1
+        op.innerHTML = num
+        oBtn1.style.background = "green"
+        oBtn2.style.background = ""
+        oBtn3.style.background = ""
+       
+    }
+    oBtn1.onmouseup = function(){
+    oBtn1.style.background = "crimson"
+    }
+      //鼠标点击时为绿色，离开后恢复为红色   
+    //5.点击+数字归零颜色btn2便成green
+    oBtn2.onmousedown = function(){
+        num = 0
+        op.innerHTML = num
+        oBtn2.style.background = "green"
+        oBtn3.style.background = ""
+        oBtn1.style.background = ""  
+    }
+    oBtn2.onmouseup = function(){
+    oBtn2.style.background = "crimson"
+    }
+     //6.点击+数字加一颜色btn3便成green
+     oBtn3.onmousedown = function(){
+        num += 1
+        op.innerHTML = num
+        oBtn3.style.background = "green"
+        oBtn2.style.background = ""
+        oBtn1.style.background = ""
+    }
+    oBtn3.onmouseup = function(){
+    oBtn3.style.background = "crimson"
+    }
+  
+   
+   </script>
+</body>
+</html>

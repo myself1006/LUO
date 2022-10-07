@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+   div {
+    width: 50px;
+    height: 50px;
+    background-color: #333333;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #000;
+    line-height: 50px;
+    text-align: center;
+   }
+  </style>
+ </head>
+ <body>
+  <button type="button">自动生成100个li</button>
+  <section style="width: 750px;"></section>
+  <script type="text/javascript">
+   var str = '' //string:表示创建一个字符串变量
+   var colorArr = ['red', 'yellow', 'blue', 'green']
+   var oBtn = document.querySelector('button')
+   var oSection = document.querySelector('section')
+   n = 0
+   for (var i = 0; i < 100; i++) {
+    
+               if (i % 4 == 0) {
+                   str += "<div style='background:" + colorArr[0] + "'>" + i +"</div>" // 1
+   
+               }
+               if (i % 4 == 1) {
+                   str += "<div style='background:" + colorArr[1] + "'>" +i +"</div>"//2
+               }
+               if (i % 4 == 2) {
+                   str += "<div style='background:" + colorArr[2] + "'>" + i +"</div>"//3
+               }
+               if (i % 4 == 3) {
+                   str += "<div style='background:" + colorArr[3] + "'>" +  i +"</div>"//4
+               }
+   
+           }
+   
+           oBtn.onclick = function () {
+               oSection.innerHTML = str
+   
+           }
+  </script>
+ </body>
+</html>

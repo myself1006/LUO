@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .slider {
+            position: relative;
+            margin: 20px auto 0;
+            border: 2px solid black;
+            width: 640px;
+            height: 340px;
+            overflow: hidden;
+        }
+
+        #t1 {
+            width: 640px;
+            height: 340px;
+        }
+
+        /* 按钮 */
+        .btn {
+            width: 160px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.4);
+            margin-top: -50px;
+            cursor: pointer;
+        }
+
+        #btn1 {
+            left: -80px;
+            transform: skew(-20deg);
+            color: white;
+            text-align: right;
+            /* background-image: url("images/next.png"); */
+        }
+
+       .p1{
+            transform: skew(-50deg);
+        }
+        #btn2 {
+            right: -80px;
+            transform: skew(-20deg);
+            color: white;
+            /* background-image: url("images/next.png"); */
+        }
+
+        /* 渐变背景 */
+        .slider::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            background-image: linear-gradient(to top,
+                    rgba(0, 0, 0, 1),
+                    rgba(0, 0, 0, 0) 10%,
+                    rgba(0, 0, 0, 0));
+            display: block;
+            width: 641px;
+            height: 100%;
+        }
+
+        #h2 {
+            position: absolute;
+            left: 20px;
+            bottom: 15px;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* 五个指示框 */
+        .block {
+
+            height: 5px;
+            width: 200px;
+            position: absolute;
+            right: 0;
+            bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .block span {
+            display: block;
+            width: 30px;
+            height: 8px;
+            background-color: #ccc;
+            transform: skew(-20deg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <img src="/2022.9.2/images/aaa.jpg" id="img" alt="" />
+        <div class="btn" id="btn1"><span class="p1">1/5</span></div>
+        <div class="btn" id="btn2"><span>1/5</span></div>
+        <h2 id="h2">'[英超]莱斯特城0-1曼联',</h2>
+        <div class="block">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        // 数据
+        var arrUrl = [
+           " ./img/aaa.jpg",
+            "./img/bbb.jpg",
+            "./img/ccc.jpg",
+            "./img/ddd.jpg",
+           " ./img/eee.jpg"
+        ]
+       
+        var arrH2 = [
+            '[英超]莱斯特城0-1曼联',
+            '[中超联赛]沧州雄狮0-0上海海港',
+            '[中超联赛]大连人5-1深圳队',
+            '[美网女单]袁悦2-0晋级',
+            '图集-2022F1荷兰大奖赛周四扫描'
+        ]
+ // 变量 
+ var num = 0
+    // 获取元素
+     var OImg = document.getElementById("img")
+     var OBtn1 = document.getElementById("btn1")
+     var OBtn2 = document.getElementById("btn2")
+     var OH2 = document.getElementById("h2")
+
+    // 点击btn2:1.oImg。src 2oH2.INNERHTML
+    // 3.oBtn
+    OBtn2.onclick = function(){
+        num = num + 1
+        if(num == 4){
+            num = 0 
+        }
+        OImg.src = arrUrl[num]
+        OH2.innerHTML = arrH2[num]
+        OBtn1.innerHTML = (num + 1)  + "/" + arrUrl.length
+        OBtn2.innerHTML = (num + 1)  + "/" + arrUrl.length
+    }
+    OBtn1.onclick = function(){
+        num = num + 1
+        if(num == 4){
+            num = 0 
+        }
+        OImg.src = arrUrl[num]
+        OH2.innerHTML = arrH2[num]
+        OBtn1.innerHTML = (num + 1)  + "/" + arrUrl.length
+        OBtn2.innerHTML = (num + 1)  + "/" + arrUrl.length
+    }
+    </script>
+</body>
+
+</html>

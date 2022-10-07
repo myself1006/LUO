@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>太极</title>
+		<style>
+			body{
+				width: 500px;
+				height: 500px;
+				position: relative;
+				animation: example 20s infinite linear;
+				transform:rotate(45deg) ;
+			}
+			.a{
+				width: 500px;
+				height: 500px;
+				border:1px solid black;
+				border-radius: 50%;
+				background-image:linear-gradient(to left,#fff 0%,white 50%,#000 50%,black 100%) ;
+				position: relative;
+			}
+			.b{
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				background-color: #000;
+				position: Absolute;
+				top: 0px;
+				left: 130px;
+			}
+			.c{
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				background-color: #fff;
+				position: Absolute;
+				bottom: 0px;
+				left: 130px;
+			}
+			.d{
+				width: 130px;
+				height: 130px;
+				background-color: #fff;
+				border-radius: 50%;
+				position:Absolute;
+				top: 60px;
+				left: 190px;
+			}
+			.e{
+				width: 130px;
+				height: 130px;
+				background-color:#000;
+				border-radius: 50%;
+				position:Absolute;
+				top: 310px;
+				left: 190px;
+			}
+			@keyframes example {
+				from{
+					transform:rotate(0deg) ;
+				}
+				to{transform: rotate(3600deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a"></div>
+		<div class="b"></div>
+		<div class="c"></div>
+		<div class="d"></div>
+		<div class="e"></div>
+	</body>
+</html>

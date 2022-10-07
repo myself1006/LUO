@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #d0 {
+            margin: 0 auto;
+            background-color: #ccc;
+            width: 500px;
+            height: 500px;
+            
+        }
+
+        .d1 {
+            display: flex;
+        }
+
+        #btn {
+            display: block;
+            background-color: red;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .d2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        /* **********d3************ */
+        .d3 {
+            background-color: white;
+            border: 10px solid #aaa;
+            width: 200px;
+            height: 200px;
+            margin-left: 10px;
+            margin-top: 20px;
+            display: none;
+            position: absolute;
+            top: 100px;
+            left: 250px;
+        }
+
+        .d3 .hang1 {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .d3 .hang1 .s2,
+        .s3,
+        .s4 {
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid black;
+            display: block;
+           
+        }
+
+        .d3 .hang1 .s2 {
+            background-color: red;
+            margin-left: 1px;
+        }
+
+        .d3 .hang1 .s3 {
+            background-color: yellow;
+            margin-left: 5px;
+        }
+
+        .d3 .hang1 .s4 {
+            background-color: blue;
+            margin-left: 5px;
+        }
+
+        .d3 .hang2 {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .d3 .hang2 .p2,
+        .p3,
+        .p4 {
+            border: 1px solid black;
+            display: block;
+            width: 30px;
+            line-height: 25px;
+            height: 25px;
+            background-color: #eee;
+            margin-left: 5px;
+            text-align: center;
+        }
+
+        .d3 .hang3 {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .d3 .hang3 .n2,
+        .n3,
+        .n4 {
+            border: 1px solid black;
+            display: block;
+            width: 30px;
+            line-height: 25px;
+            height: 25px;
+            background-color: #eee;
+            margin-left: 5px;
+            text-align: center;
+        }
+
+        .hang4 {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .hang4 .btn1,
+        .btn2 {
+            display: block;
+            width: 50px;
+            height: 30px;
+        }
+        .wai{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body id="ys">
+    <div id="d0">
+        <div class="d1">
+            <h1>请为下面的DIV设置样式:</h1>
+            <button id="btn">点击设置</button>
+        </div>
+        <div class="wai">
+            <div class="d2" id="d2">
+
+            </div>
+            <div class="d3">
+                <div class="hang1">
+                    <span class="s1">设置背景色：</span>
+                    <span class="s2" id="s2">红</span>
+                    <span class="s3" id="s3">黄</span>
+                    <span class="s4" id="s4">蓝</span>
+                </div>
+                <div class="hang2">
+                    <span class="p1">选择宽( px ):</span>
+                    <span class="p2" id="p2">200</span>
+                    <span class="p3" id="p3">300</span>
+                    <span class="p4" id="p4">400</span>
+                </div>
+                <div class="hang3">
+                    <span class="n1">选择高( px ):</span>
+                    <span class="n2" id="n2">200</span>
+                    <span class="n3" id="n3">300</span>
+                    <span class="n4" id="n4">400</span>
+                </div>
+                <div class="hang4">
+                    <button class="btn1" id="btn1">恢复</button><button class="btn2" id="btn2">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //获取元素
+        var body = document.getElementById("ys")
+        var btn = document.getElementById("btn")
+        var btn1 = document.getElementById("btn1")
+        var btn2 = document.getElementById("btn2")
+        var oDiv2 = document.getElementById("d2")
+        var oDiv3 = document.getElementsByClassName("d3")[0]
+        var arr= true
+        // style设置，元素获取
+        //颜色
+        var s2 = document.getElementById("s2")
+        var s3 = document.getElementById("s3")
+        var s4 = document.getElementById("s4")
+        // 宽
+        var p2 = document.getElementById("p2")
+        var p3 = document.getElementById("p3")
+        var p4 = document.getElementById("p4")
+        // 高
+        var n2 = document.getElementById("n2")
+        var n3 = document.getElementById("n3")
+        var n4 = document.getElementById("n4")
+        //点击设置按钮btn，将隐藏的d3显示出来 
+        btn.onclick = function(){
+            if(arr){
+                oDiv3.style.display =" block"
+                body.style.background = "rgba(0,0,0,.3)"
+               arr= false
+            }else{
+                oDiv3.style.display =" none"
+                body.style.background = "rgba(0,0,0,0)"
+                arr= true
+                
+            }    
+        }
+      //点击s2，s3,s4,将oDiv2背景色改成红色,黄色，蓝色
+      s2.onclick = function(){
+        oDiv2.style.background = "red"
+      }
+
+      s3.onclick = function(){
+        oDiv2.style.background = "yellow"
+      }
+      s4.onclick = function(){
+        oDiv2.style.background = "blue"
+      }
+      //点击p2，p3,p4,将oDiv2宽改成200,300，400
+      p2.onclick = function(){
+        oDiv2.style.width="200px"
+      }
+      p3.onclick = function(){
+        oDiv2.style.width="300px"
+      }
+      p4.onclick = function(){
+        oDiv2.style.width="400px"
+      }
+      //点击n2，n3,n4,将oDiv2高改成200,300，400
+      n2.onclick = function(){
+        oDiv2.style.height="200px"
+      }
+      n3.onclick = function(){
+        oDiv2.style.height="300px"
+      }
+      n4.onclick = function(){
+        oDiv2.style.height="400px"
+      }
+      btn1.onclick = function(){
+        oDiv2.style.height=""
+        oDiv2.style.width=""
+        oDiv2.style.background = ""
+      }
+      btn2.onclick = function(){
+        oDiv3.style.display =" none"
+        body.style.background = "rgba(0,0,0,0)"
+    }
+    </script>
+</body>
+
+</html>

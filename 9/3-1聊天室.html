@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 400px;
+            height: 175px;
+            background-color: antiquewhite;
+        }
+
+        .box1 {
+            background-color: cornflowerblue;
+            height: 25px;
+        }
+
+        .box1 span {
+            color: rgb(116, 11, 11);
+        }
+        /* .box1 p{
+           padding-left: 5px;
+           display: block;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+        </div>
+        <div class="box1">
+            <span>张三</span>
+            <input type="text" class="input" value="" placeholder="请输入...">
+            <button>发送</button>
+        </div>
+
+    </div>
+    <script>
+        //获取input里的内容，然后点击button传输到.box ,点击之后清空oInput文本框
+        //1.获取元素
+        var oBox1 = document.querySelector(".box")
+        var oSpan = document.querySelector("span")
+        var oInput = document.querySelector(".input")
+        var oBtn = document.querySelector("button")
+        //2.点击oBtn,将oInput.value传入oBox1里
+        // oBtn.onclick = function () {
+        //     oBox1.innerHTML += "<p style.textIndent= '2em'>" + oInput.value + "</p>"
+        //     //3.点击之后清空oInput文本框
+        //     oInput.value = ""
+        // }
+        //4.如果输入空字符串，则会弹出警示窗口//如果输入字符串，则会执行else里的代码
+        oBtn.onclick = function () {
+        if(oInput.value == ""){
+            window.alert("小老弟怎么不打字？") 
+            
+        }else {   
+           
+            oBox1.innerHTML += "<p><span>张三：</span><span>" + oInput.value + "</span></p>"
+            //3.点击之后清空oInput文本框
+            oInput.value = ""
+        } 
+        }
+    </script>
+</body>
+
+</html>

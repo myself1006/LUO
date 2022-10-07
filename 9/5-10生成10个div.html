@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+    <script>
+        //终极目标：点击按钮，把10个有不同背景色的div写入box里
+
+        //第一步：获取元素：btn  box
+        var btn = document.getElementById('btn')
+        var oDiv = document.getElementById('box')
+        var str = ''
+        var colors = ['red','yellow','blue','green']
+
+        console.log(0%4)
+        console.log(1%4)
+        console.log(2%4)
+        console.log(3%4)
+        console.log(4%4)
+        console.log(5%4)
+        console.log(6%4)
+        console.log(7%4)
+        console.log(8%4)
+        console.log(9%4)
+
+
+
+
+        //第二步：点击btn,向oDiv的内容添加(手动添加)10个不同背景色的div
+        btn.onclick = function(){
+            //第三步：用循环生成10个div
+            //第四步：添加背景色
+            for(var i=0; i<10; i = i+1){
+                str = str + '<div style="background:'+ colors[i%4]+'">'+ i +'</div>' //添加新内容，不覆盖原有内容
+            }
+            oDiv.innerHTML = str //提高性能
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+取模就是取余数
+
+
+
+
+ -->

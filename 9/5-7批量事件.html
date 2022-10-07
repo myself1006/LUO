@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				padding:0;
+				width:500px;
+				height:200px;
+				display: flex;
+				flex-wrap: wrap;
+				border:10px solid rgb(0, 0, 0);
+				list-style:none;
+				justify-content: space-between;
+				transform: translate(50%,50%);
+			}
+			li{
+				width:90px;
+				height:90px;
+				background:rgba(0, 0, 0, 0.955);
+				position:relative;
+			}
+			/* li:hover div{ */
+			div{
+				width:80px;
+				height:80px;
+				background-color: rgb(215, 166, 166);
+				position:absolute;
+				right:-80px;
+				top:-80px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="aaa" id="bbb" title="hello" style="background:rgba(0, 0, 0, 0.955)">
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+		</ul>
+		
+		
+		<script type="text/javascript">
+			var oUl = document.querySelector('ul')
+			var aLi = oUl.querySelectorAll('li')
+			
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].onmouseover = function(){
+					this.querySelector('div').style.display = 'block'
+				}
+				// aLi[i].onclick = function(){
+				aLi[i].onmouseout = function(){
+					this.querySelector('div').style.display = 'none'
+				}
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

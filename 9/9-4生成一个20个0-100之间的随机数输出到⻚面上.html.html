@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+            margin: 50px auto;
+        }
+        .box div{
+            width: 20px;
+            height: 20px;
+            color: cadetblue;
+        }
+        button{
+            position: absolute;
+            left: 500px;
+            top: 400px;
+            display: block;
+            width: 200px;
+            height: 100px;
+            border: none;
+            border-radius: 20px;
+            background-color: cornflowerblue;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    </div>
+    <button>按钮</button>
+    <script>
+        // ⽤Math.random()⽅法⽣成⼀个20个0-100之间的随机数输出到⻚⾯上
+        //先在box里的div中生成20个0-100之间的随机数
+        //1.获取元素
+        var oDiv = document.querySelector(".box")
+        var oBtn = document.querySelector("button")
+        var str = ""
+        
+        //2.使用for循环生成20个0-100之间的随机数
+       oBtn.onclick = function(){
+        for(var i = 0 ; i < 20 ; i++){
+         str += Math.round( Math.random()*100) + '|'
+             
+        }
+        console.log(Math.random())
+        console.log(oDiv)
+        oDiv.innerHTML = str
+        str = ""
+       }
+      
+       
+    </script>
+</body>
+</html>

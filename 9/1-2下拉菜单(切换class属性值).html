@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        ul{
+                   list-style: none;   
+        }
+        nav{
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: #ccc;
+            margin: 50px auto;
+            text-align: center;
+            line-height: 50px;  
+        }
+        .sub-menu{
+            display: none;
+            background-color: cornflowerblue;
+            position: absolute;
+            width: 200px;
+        }
+        nav>a{
+            display: block;
+            color: black;
+            background-color: rgb(240, 171, 206);
+            width: 100%;
+            position: relative;
+        }
+        .active{
+            display: block;  
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">一级菜单
+            <ul class="sub-menu">
+                <li><a href="#">二级菜单</a></li>
+                <li><a href="#">二级菜单</a></li>
+                <li><a href="#">二级菜单</a></li>
+            </ul>
+        </a>
+    </nav>
+    <script>
+        //鼠标悬停在a标签上显示：.sub=menu
+         //1.获取元素
+         var oA = document.querySelector('nav a')
+         var oUl = document.querySelector('.sub-menu')
+         //2.添加鼠标悬停在a标签上的事件
+         oA.onmouseover = function(){
+            //3.显示.sub-menu:通过修改class属性修改.sub-menu
+            oUl.className = "sub-menu active"
+         }
+        //鼠标移开在a标签隐藏：.sub=menu
+        //1.添加鼠标移出
+        oA.onmouseout = function(){
+            //3.隐藏.sub-menu:通过修改class属性修改.sub-menu
+            oUl.className = "sub-menu"
+         }
+    </script>
+</body>
+</html>

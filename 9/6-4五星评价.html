@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 100px;
+            margin: 50px auto;
+            border-bottom: 1px solid #333;
+            border-top: 1px solid #333;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            display: block;
+            width: 150px;
+            height: 100px;
+            line-height: 100px;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+            margin-left: 20px;
+        }
+
+        .p2 {
+            color: orange;
+            display: block;
+            width: 150px;
+            height: 100px;
+            line-height: 100px;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>总体评价</p>
+        <div class="img">
+            <img src="img/7-1.png" alt="" class="img1">
+            <img src="img/7-1.png" alt="" class="img2">
+            <img src="img/7-1.png" alt="" class="img3">
+            <img src="img/7-1.png" alt="" class="img4">
+            <img src="img/7-1.png" alt="" class="img5">
+        </div>
+        <p class="p2">给力</p>
+    </div>
+   <script>
+     //获取元素
+    var oImg1 = document.querySelector(".img1")
+    var oImg2 = document.querySelector(".img2")
+    var oImg3 = document.querySelector(".img3")
+    var oImg4 = document.querySelector(".img4")
+    var oImg5 = document.querySelector(".img5")
+    var oP2 = document.querySelector("p2")
+    
+    //1.点击oImg1，修改p2内容为很差，oImg1图片改为灰色星星
+    oImg1.onmouseover = function(){
+        oImg1.src = "img/7-3.png"
+        oImg2.src = "img/7-1.png"
+        oImg3.src = "img/7-1.png"
+
+        oP2.innerHTML =  oP2.innerHTML + "很差"
+        console.log("mm")  
+    }
+     //1.点击oImg2，修改p2内容为较差，oImg1和oImg2图片改为灰色星星
+     oImg2.onmouseover = function(){
+        oImg1.src = "img/7-3.png"
+        oImg2.src = "img/7-3.png"
+        oImg3.src = "img/7-1.png"
+        oImg4.src = "img/7-1.png"
+        oImg5.src = "img/7-1.png"
+        oP2.innerHTML =  oP2.innerHTML + "很差"
+        console.log("mm")  
+    }
+    oImg3.onmouseover = function(){
+        oImg1.src = "img/7-2.png"
+        oImg2.src = "img/7-2.png"
+        oImg3.src = "img/7-2.png"
+        oImg4.src = "img/7-1.png"
+        oImg5.src = "img/7-1.png"
+        oP2.innerHTML =  oP2.innerHTML + "很差"
+        console.log("mm")  
+    }
+    oImg4.onmouseover = function(){
+        oImg1.src = "img/7-2.png"
+        oImg2.src = "img/7-2.png"
+        oImg3.src = "img/7-2.png"
+        oImg4.src = "img/7-2.png"
+        oImg5.src = "img/7-1.png"
+        oP2.innerHTML =  oP2.innerHTML + "很差"
+        console.log("mm")  
+    }
+    oImg5.onmouseover = function(){
+        oImg1.src = "img/7-2.png"
+        oImg2.src = "img/7-2.png"
+        oImg3.src = "img/7-2.png"
+        oImg4.src = "img/7-2.png"
+        oImg5.src = "img/7-2.png"
+        oP2.innerHTML =  oP2.innerHTML + "很差"
+        console.log("mm")  
+    }
+   </script>
+</body>
+
+</html>

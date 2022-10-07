@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color:rgb(48, 145, 197)
+        }
+        h2{
+            border-bottom:1px solid #000;
+            text-align: center;
+            height:50px;
+            line-height:60px;
+        }
+        table{
+            width:720px;
+            border-collapse: collapse;
+            position:fixed;
+            left:50%;
+            margin-left:-360px;
+            top:80px;            
+        }
+        
+        td{
+            border:1px solid #333;
+            padding:3px 5px;
+            width:80px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+   <h2>九九乘法表</h2>
+    <table class="container">
+        
+    </table>
+    <script>
+        var oContainer = document.querySelector('.container');
+        var str = '';        
+        
+        for(var i=1;i<10;i++){
+            str += '<tr>';  // 注意+=          
+            for(var j=1;j<=i;j++){                
+               str += `<td>${i} × ${j} = ${i*j}</td>`;               
+            }
+            str += '</tr>';
+        }
+               
+        oContainer.innerHTML = str;
+    </script>
+</body>
+</html>

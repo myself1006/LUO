@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{
+            margin: 0 auto;
+            border: 1px solid black;
+            width: 400px;
+            height: 430px;
+            background-image: url("t1.jpg");
+            background-size: 400px,430px;
+        } */
+        body{
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div> -->
+        <!-- <img src="t1.jpg" alt=""> -->
+        <button>开始</button>
+        <button>停止</button>
+    <!-- </div> -->
+    <script>
+         var arr = ["./img/t1.jpg","./img/t2.jpg","./img/t3.jpg","./img/t4.jpg","./img/t5.jpg"]
+         console.log(arr)
+        //点击开始按钮，每隔一秒切换一张div的背景图片
+        //1.获取元素
+        var aBtn = document.querySelectorAll("button")
+        var oBody = document.body
+        //3.定义一个存储定时器的变量
+        var timer = null
+        //7.定义变量n，用于控制数组图片的切换
+        var n = 0
+        //2.点击开始按钮
+        oBody.style.background = `url(${arr[0]})`
+        aBtn[0].onclick = function(){
+            window.clearInterval(timer)
+            //5.开启定时器
+            timer = window.setInterval(fn,1000)
+        }
+        //4.定义fn函数
+        function fn(){
+           
+            //6.修改body的背景图片
+            oBody.style.background = `url(${arr[n]})`
+            //8.让n动起来，以便于切换数组元素
+            n++
+           if(n>4){
+            n = 0
+           }
+        }
+        //点击停止按钮，清除定时器  
+        //要停止定时器要知道定时器是一个函数。
+        //setInterval()定时器这个函数它的返回值是一个用数字
+        //id表示你是页面上哪一个定时器
+        //window.clearInterval()
+        aBtn[1].onclick = function(){
+            window.clearInterval(timer)
+        } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            display: block;
+            margin: 50px auto;
+            width: 500px;
+            height: 500px;
+            font-size: 50px;
+            border-radius: 20%;
+        }
+        
+    </style>
+</head>
+<body>
+    <button>点我试试</button>
+    <!-- <a href="../index.html">返回</a> -->
+    <script>
+        var oBtn = document.querySelector("button")
+        oBtn.onclick = function(){
+            for(var i = 0 ; i >= 0; i ++){
+                alert("hhh")
+            }
+        }
+        function play(n){
+            oImg.src = aImg[n]
+                oBtn2.innerHTML = `${n+1} / ${aImg.length}`
+                oBtn1.innerHTML = `${n+1} / ${aImg.length}`
+                oH2.innerHTML = aTitle[n]
+                aLi[last].className = ""
+                aLi[n].className = "active"
+                 last =n
+           }
+           play(num)//实参：实际传给num的值
+           //7.初始化4行
+           oImg.src = aImg[num]
+                oBtn2.innerHTML =oBtn1.innerHTML = `${num+1} / ${aImg.length}`
+              
+                oH2.innerHTML = aTitle[num]
+                aLi[last].className = ""
+                aLi[this.index].className = "active"
+                last = this.index 
+            //2.点击右按钮
+           
+           oBtn2.onclick = function(){
+               //6.设置条件，只有num<aImg.length时，才实现num++
+                if(num<aImg.length-1){
+                     //5.修改num
+                    num++
+                }else{
+                    num = 0
+                }
+               
+                //3.切换图片 二级标题 数字 切换框框背景色
+                oImg.src = aImg[num]
+                oBtn2.innerHTML = `${num+1} / ${aImg.length}`
+                oBtn1.innerHTML = `${num+1} / ${aImg.length}`
+                oH2.innerHTML = aTitle[num]
+                aLi[last].className = ""
+                aLi[num].className = "active"
+                 last =num
+            }
+             //目标3. 点击左按钮做四件事，切换图片 二级标题 数字 切换框框背景色
+              //2.点击左按钮
+            oBtn1.onclick = function(){
+               //6.设置条件，只有num<aImg.length时，才实现num--
+                if(num> 0){
+                     //5.修改num
+                    num--
+                }else{
+                    num = aImg.length-1
+                }
+               
+                //3.切换图片 二级标题 数字 切换框框背景色
+                oImg.src = aImg[num]
+                oBtn1.innerHTML = `${num+1} / ${aImg.length}`
+                oBtn2.innerHTML = `${num+1} / ${aImg.length}`
+                oH2.innerHTML = aTitle[num]
+                aLi[last].className = ""
+                aLi[num].className = "active"
+                 last =num
+            }
+            //3.鼠标悬停
+           for(var i = 0 ; i <aLi.length ; i ++){
+             aLi[i].index =i
+             aLi[i].onmouseover = function(){
+                 //3. 点击左按钮做四件事，切换图片 二级标题 数字 切换框框背景色
+                oImg.src = aImg[this.index]
+                oBtn1.innerHTML = `${this.index+1} / ${aImg.length}`
+                oBtn2.innerHTML = `${this.index+1} / ${aImg.length}`
+                oH2.innerHTML = aTitle[this.index]
+                aLi[last].className = ""
+                aLi[this.index].className = "active"
+                last = this.index 
+             }
+           }
+    </script>
+</body>
+
+</html>
+    </script>
+</body>
+</html>

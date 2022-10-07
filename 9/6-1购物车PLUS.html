@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            /*折叠单元格边框  */
+            border-collapse: collapse;
+            margin: 0 a;
+
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        .shuliang {
+            width: 20px;
+            
+        }
+
+        .img img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>全选</th>
+                <th colspan="2">商品</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td><img src="aImg[i]"></td>
+                <!-- []方括号访问数组的下标 -->
+                <td>aTitle[i]</td>
+                <td>aPrice[i]</td>
+                <td><button></botton>-<input class="shuliang" type='text' value="1"><button>+</botton>
+                </td>
+                <td class="xiaoji">小计</td>
+                <td>删除</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7">全选 删除选中的商品已选择3件商品 总价:￥ <span class="total"> 44.70</span> 去结算</td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        //   数据
+        // aTitle超能
+        var aTitle = ['家乐鸡精调味料 600g  联合利华出品', '水塔 醋 4度陈醋 2.3L 山西特产', '中盐 低钠盐 食盐 250g', '王守义十三香45g 炒菜炖肉拌菜蘸料腌制调味料 中华老字号', '太太乐 鸡精 三鲜调味料 加倍提鲜 227g 雀巢出品', '海天黄豆酱340g 豆瓣酱原味调味品调料酱 甜味酱 拌饭拌面下饭酱蘸料酱炒', '京糖 JINGTANG 优级绵白糖 500g 中华老字号 北京糖酒集团出品', '海天 酱油 味极鲜特级生抽 1.9L 中华老字号']
+        var aPrice = [14.90, 15.60, 3.50, 4.50, 10.90, 8.40, 8.60, 25.90]
+        var aImg = ['img/1jljj.jpg', 'img/2stcc2.jpg', 'img/3zydny.jpg', 'img/413x.jpg', 'img/5ttljj.jpg', 'img/6htdbj.jpg', 'img/7bt.jpg', 'img/8htjy.jpg']
+        // 定义变量
+        var str = ''
+        //终极目标：使用for循环生成8行，每行7个单元格，把数据填充到对应的每个单元格里的数据是不同
+
+        // 获取元素
+        var oTbody = document.querySelector('tbody')
+        // console.log
+        // 定义变量str,拼接字符串
+        var str = ''
+        // for，拼接字符串
+        for (i = 0; i < 8; i = i + 1) {
+            // str是我们要拼的字符串
+            str = str + ` <tr>
+                <td><input type="checkbox"></td>
+                <td class='img'><img src="${aImg[i]}" ></td>
+                // []方括号访问数组的下标
+                <td>${aTitle[i]}</td>
+                <td>${aPrice[i]}</td>
+                <td><button claas='jianBtn'>-</botton><input class="shuliang" type='text'value="1"><button class='jiaBtn'>+</botton></td>
+                <td class='xiaoji'>${aPrice[i]}</td>
+                <td><span>删除<span></td></tr>`
+        }
+        //4. 把str写入tbody
+        console.log(str)
+        oTbody.innerHTML = str
+        //////////购物车功能部分////////////
+        // 终极目标A：    1.修改数量2.修改小计3.修改总价
+        // 1.获取元素
+        var aJiaBtn = document.querySelectorAll('.jiaBtn')
+        var aJianBtn = document.querySelectorAll('.jianBtn')
+        var aInput = document.querySelectorAll('.shuliang')
+        var aXiaoji = document.querySelectorAll('.xiaoji')
+        var oTotal = document.querySelector('.total')
+
+        // 2.定义变量
+        var totalMoney = 0
+
+        // 6.计算初始总价格
+        for (var i = 0; i < aPrice.length; i = i + 1) {
+            totalMoney = totalMoney + aPrice[i]
+        }
+        oTotal.innerHTML = totalMoney.toFixed(2)
+
+
+        // 3.添加点击事件，给右侧的btn
+        // GouWuChe(0)
+        // GouWuChe(1)
+        // GouWuChe(2)
+        // GouWuChe(3)
+        // GouWuChe(4)
+        for(var i=0; i<aPrice.length;i=i+1){
+            GouWuChe(i)
+        }
+
+        function GouWuChe(a) { 
+        aJiaBtn[a].onclick = function () { 
+        // 4.修改数量
+        aInput[a].value = (aInput[a].value * 1) + 1
+        // console.log(aInput[a].value)
+
+        // 5.修改小计
+        aXiaoji[a].innerHTML = (aInput[a].value * aPrice[a]).toFixed(2)
+
+}
+}
+function GouWuChe(a) { 
+        aJianBtn[a].onclick = function () { 
+        // 4.修改数量
+        aInput[a].value = (aInput[a].value * 1) - 1
+        // console.log(aInput[a].value)
+
+        // 5.修改小计
+        aXiaoji[a].innerHTML = (aInput[a].value * aPrice[a]).toFixed(2)
+
+}
+}
+        // 7.修改总价= totalMoney + aPrice[i]
+
+        totalMoney = totalMoney + aPrice[i]
+        oTotal.innerHTML = totalMoney.toFixed(2)
+
+
+
+
+
+        // aJiaBtn[1].onclick = function () {
+        //     // 4.修改数量
+        //     aInput[1].value = (aInput[0].value * 1) + 1
+        //     // console.log(aInput[0].value)
+
+        //     // 5.修改小计
+        //     aXiaoji[1].innerHTML = (aInput[1].value * aPrice[1]).toFixed(2)
+
+        //     // 7.修改总价= totalMoney + aPrice[0]
+
+        //     totalMoney = totalMoney + aPrice[1]
+        //     oTotal.innerHTML = totalMoney.toFixed(2)
+
+        // }
+
+
+        // aJiaBtn[2].onclick = function () {
+        //     // 4.修改数量
+        //     aInput[2].value = (aInput[2].value * 1) + 1
+        //     // console.log(aInput[2].value)
+
+        //     // 5.修改小计
+        //     aXiaoji[2].innerHTML = (aInput[2].value * aPrice[2]).toFixed(2)
+
+        //     // 7.修改总价= totalMoney + aPrice[2]
+
+        //     totalMoney = totalMoney + aPrice[2]
+        //     oTotal.innerHTML = totalMoney.toFixed(2)
+
+        // }
+
+
+       // 终极目标B:    1.修改数量2.修改小计3.修改总价
+
+
+    </script>
+</body>
+
+</html>
